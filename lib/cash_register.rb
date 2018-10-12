@@ -2,7 +2,7 @@ require 'pry'
 
 class CashRegister
 
-  attr_accessor :total, :discount, :items, :last_item
+  attr_accessor :total, :discount, :items
 
   def initialize(discount = 0)
     @total = 0
@@ -16,12 +16,18 @@ class CashRegister
       new_items << {title: title, price: price}
     }
     if @items.size == 0
-      @items = [title]
+      @items = new_items
     else
-      quantity.times { @items << title }
+      new_items.each {|item| @items << item}
     end
     @total += (price * quantity)
-    @last_item = {title: title, price: price.to_f}
+  end
+
+  def total
+    sum = 0
+    @items.each { |item|
+      sum += item[:price]
+    }
   end
 
   def apply_discount
