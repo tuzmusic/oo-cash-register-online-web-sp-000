@@ -23,20 +23,10 @@ class CashRegister
     @total += (price * quantity)
   end
 
-  # def total
-  #   # binding.pry
-  #   sum = 0
-  #   @items.each { |item|
-  #     sum += item[:price]
-  #   }
-  #   @total = sum
-  #   @total
-  # end
-
   def apply_discount
     return "There is no discount to apply." if @discount == 0
     discount = @discount.to_f
-    # @total *= (1 - discount/100)
+    @total *= (1 - discount/100)
     discounted_total = @total * (1 - discount/100)
     "After the discount, the total comes to $#{discounted_total.to_i}."
   end
