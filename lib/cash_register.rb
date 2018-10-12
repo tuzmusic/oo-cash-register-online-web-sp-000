@@ -11,8 +11,7 @@ class CashRegister
   end
 
   def add_item(title, price, quantity = 1)
-    new_items = []
-    quantity.times {
+    new_items = quantity.times {
       new_items << {title: title, price: price}
     }
     if @items.size == 0
