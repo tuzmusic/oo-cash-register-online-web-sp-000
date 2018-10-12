@@ -2,7 +2,7 @@ require 'pry'
 
 class CashRegister
 
-  attr_accessor :discount, :items
+  attr_accessor :discount, :items # writer for total? probably not
 
   def initialize(discount = 0)
     @total = 0
@@ -37,7 +37,7 @@ class CashRegister
     discount = @discount.to_f
     # @total *= (1 - discount/100)
     discounted_total = total * (1 - discount/100)
-    "After the discount, the total comes to $#{@total.to_i}."
+    "After the discount, the total comes to $#{discounted_total.to_i}."
   end
 
   def items
