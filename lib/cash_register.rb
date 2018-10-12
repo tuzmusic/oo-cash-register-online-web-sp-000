@@ -20,7 +20,7 @@ class CashRegister
     else
       new_items.each {|item| @items << item}
     end
-    @total += (price * quantity)
+    # @total += (price * quantity)
   end
 
   def total
@@ -28,6 +28,8 @@ class CashRegister
     @items.each { |item|
       sum += item[:price]
     }
+    @total = sum
+    @total
   end
 
   def apply_discount
