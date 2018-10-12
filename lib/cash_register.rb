@@ -25,8 +25,7 @@ class CashRegister
 
   def apply_discount
     return "There is no discount to apply." if @discount == 0
-    discount = @discount.to_f
-    @total *= (1 - discount/100)
+    @total *= (1 - @discount.to_f/100)
     "After the discount, the total comes to $#{total.to_i}."
   end
 
@@ -36,7 +35,6 @@ class CashRegister
 
   def void_last_transaction
     @total -= @items.pop[:price]
-    # @items.pop
   end
 
 end
