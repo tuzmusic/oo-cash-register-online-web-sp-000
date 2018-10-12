@@ -2,7 +2,8 @@ require 'pry'
 
 class CashRegister
 
-  attr_accessor :discount, :items # writer for total? probably not
+  attr_accessor :discount, :items
+  attr_writer :total
 
   def initialize(discount = 0)
     @total = 0
