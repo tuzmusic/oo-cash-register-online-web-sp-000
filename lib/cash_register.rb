@@ -11,14 +11,16 @@ class CashRegister
   end
 
   def add_item(title, price, quantity = 1)
-    new_items = quantity.times {
+    new_items = []
+    quantity.times {
       new_items << {title: title, price: price}
     }
-    if @items.size == 0
-      @items = new_items
-    else
-      new_items.each {|item| @items << item}
-    end
+    # @items += new_items
+    # if @items.size == 0
+    #   @items = new_items
+    # else
+    #   new_items.each {|item| @items << item}
+    # end
     @total += (price * quantity)
   end
 
