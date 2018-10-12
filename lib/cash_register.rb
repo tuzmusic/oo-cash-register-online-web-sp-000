@@ -31,7 +31,7 @@ class CashRegister
   end
 
   def items
-    @items
+    @items.map{|item| item.title}
   end
 
   def void_last_transaction
