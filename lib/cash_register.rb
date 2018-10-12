@@ -15,7 +15,7 @@ class CashRegister
     quantity.times {
       new_items << {title: title, price: price}
     }
-    # @items += new_items
+    @items += new_items
     # if @items.size == 0
     #   @items = new_items
     # else
