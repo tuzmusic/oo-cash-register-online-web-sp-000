@@ -23,7 +23,8 @@ class CashRegister
     # @total += (price * quantity)
   end
 
-  def total
+  def total=
+    binding.pry
     sum = 0
     @items.each { |item|
       sum += item[:price]
