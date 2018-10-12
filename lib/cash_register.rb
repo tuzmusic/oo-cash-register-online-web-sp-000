@@ -34,6 +34,10 @@ class CashRegister
     @items.map{|item| item[:title]}
   end
 
+  def last_item
+    @items.last
+  end
+
   def void_last_transaction
     @total -= last_item[:price]
     @items.pop
